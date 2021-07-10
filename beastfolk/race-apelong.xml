@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+	<info>
+		<name>Apelong</name>
+		<update version="0.1">
+			<file name="race-apelong.xml" url="https://raw.githubusercontent.com/SamJenkins1/elements-reddit/master/reddit/reddit-unearthed-arcana/gus-errata-beastfolk/race-apelong.xml" />
+		</update>
+	</info>
+
+	<element name="Apelong" type="Race" source="Old Gus' Errata: Beastfolk" id="ID_RACE_APELONG">
+		<description>
+			<h4>Out of the Forests</h4>
+			<p>Like humans, apelong are varied, clever, and highly adaptable. Those that leave their troops and native jungles behind are rare enough to turn heads when encountered by the unfamiliar, and at first glance, a naked greater ape is almost indistinguishable from their beastly counterparts. This has led to more than a few unfortunate misunderstandings and members of this proud people have been kept imprisoned by charlatans and circuses who show off their talking ape as a curiosity for passing travelers.</p>
+			<p class="indent">Apelong tribes are known for their making alliances and readily join ranks with other races, forming multigenerational bonds. In areas where this has happened, seeing an ape tending bar or serving as a city guard can become a regular sight. Of all other races, apes are the least likely to trust humans, who they often believe themselves superior to in every way.</p>
+			<p class="indent">Apelong do not live quite as long as their human cousins, and mature and age at more rapid rates. The greater apes are divided into three distinct races: the ozo, the panzu, and the suxiu. The ozo tend to dedicate themselves to a life of duty and service, while the panzu and suxiu are more likely to take to a life of freewheeling opportunism.</p>
+			</description>
+		<sheet display="false" />
+		<rules>
+			<grant type="Language" id="ID_LANGUAGE_COMMON"/>
+			<grant type="Language" id="ID_LANGUAGE_APELONG" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_APELONG_SUBRACE" />
+		</rules>
+	</element>
+	<element name="Apelong Subrace" type="Racial Trait" source="Old Gus' Errata: Beastfolk" id="ID_RACIAL_TRAIT_APELONG_SUBRACE">
+		<description>
+			<p>Choose one of the following subraces: Ozo, Panzu, or Suxiu.</p>
+		</description>
+		<sheet display="false" />
+		<rules>
+			<select type="Sub Race" name="Apelong Subrace" supports="Apelong" />
+		</rules>
+	</element>
+	
+	<element name="Ozo" type="Sub Race" source="Old Gus' Errata: Beastfolk" id="ID_SUB_RACE_HAAN_HI">
+		<supports>Apelong</supports>
+		<description>
+			<p>The mighty Ozo tower over their relatively hairless human cousins, preferring to walk on all fours. They usually resemble gorillas or orangutans.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength score increases by 2 and your Constitution score increases by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Ozo mature at 10 years and live up to 60 years.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Ozo stand between 5.5 and 6.5 feet tall, and weigh 250-350 pounds. Your size is Medium.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> You have a base walking speed of 35 feet when your hands are unoccupied, 30 feet when one hand is occupied, and 25 feet when both hands are occupied.</p>
+			<p class="indent"><strong><em>Powerful Build.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift.</p>
+			<p class="indent"><strong><em>Ape Weaponry.</em></strong> You can use your teeth or hands to make unarmed strikes. If you hit with them, you deal bludgeoning (fists) or piercing (bite) damage equal to 1d6 + your Strength modifier.</p>
+			<p class="indent"><strong><em>Stunning Might.</em></strong> When you hit a creature a melee attack, you can attempt to stun the creature with a bonus action. The target makes a Constitution saving throw DC 8 + your proficiency bonus + your Strength modifier or it is stunned until the start of its next turn. You can use this trait once, and must finish a short or long rest before you can use it again.</p>
+			<p class="indent"><strong><em>Imposing Stature.</em></strong> You are proficient with the Intimidation skill.</p>
+			<p class="indent"><strong><em>Woodland Traveler.</em></strong> Difficult terrain due to plants bushes or trees does not impede your movement.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="height" modifier="1d12">5'5"</set>
+			<set name="weight" modifier="1d4">250 lb.</set>
+		</setters>
+		<rules>
+			<stat name="strength" value="2"/>
+			<stat name="constitution" value="1" />
+			<stat name="innate speed" value="25" bonus="base" />
+			<grant type="Size" id="ID_SIZE_MEDIUM" />
+			<grant type="Proficiency" id="ID_PROFICIENCY_SKILL_INTIMIDATION" />
+			<grant type="Racial Trait" id="ID_WOTC_VGTM_RACIAL_TRAIT_GOLIATH_POWERFUL_BUILD" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_APELONG_APE_WEAPONRY" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_APELONG_STUNNING_MIGHT" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_APELONG_WOODLAND_TRAVELER" />
+		</rules>
+	</element> 
+	<element name="Ape Weaponry" type="Racial Trait" source="Old Gus' Errata: Beastfolk" id="ID_RACIAL_TRAIT_APELONG_APE_WEAPONRY">
+		<description>
+			<p>You can use your teeth or hands to make unarmed strikes. If you hit with them, you deal bludgeoning (fists) or piercing (bite) damage equal to 1d6 + your Strength modifier</p>
+		</description>
+		<sheet>
+			<description>You can use your teeth or hands to make unarmed strikes. If you hit with them, you deal bludgeoning (fists) or piercing (bite) damage equal to  1d6+{{apelong unarmed:damage}}.</description>
+		</sheet>
+		<rules>
+			<stat name="apelong unarmed:damage" value="strength:modifier" />
+		</rules>
+	</element>	
+	<element name="Stunning Might" type="Racial Trait" source="Old Gus' Errata: Beastfolk" id="ID_RACIAL_TRAIT_APELONG_STUNNING_MIGHT">
+		<description>
+			<p>When you hit a creature a melee attack, you can attempt to stun the creature with a bonus action. The target makes a Constitution saving throw DC 8 + your proficiency bonus + your Strength modifier or it is stunned until the start of its next turn. You can use this trait once, and must finish a short or long rest before you can use it again.</p>
+		</description>
+		<sheet>
+			<description>When you hit a creature a melee attack, you can attempt to stun the creature with a bonus action. The target makes a Constitution saving throw DC 8 + {{proficiency}} + {{strength:modifier}} or it is stunned until the start of its next turn. You can use this trait once, and must finish a short or long rest before you can use it again.</description>
+		</sheet>
+	</element>
+	<element name="Woodland Traveler" type="Racial Trait" source="Old Gus' Errata: Beastfolk" id="ID_RACIAL_TRAIT_APELONG_WOODLAND_TRAVELER">
+		<description>
+			<p>Difficult terrain due to plants bushes or trees does not impede your movement.</p>
+		</description>
+		<sheet>
+			<description>Difficult terrain due to plants bushes or trees does not impede your movement.</description>
+		</sheet>
+	</element>
+
+	<element name="Panzu" type="Sub Race" source="Old Gus' Errata: Beastfolk" id="ID_SUB_RACE_PANZU">
+		<supports>Apelong</supports>
+		<description>
+			<p>Panzu resemble chimpanzees or mandrills, and despite their small stature, are stronger than humans. Their keen minds lead them to all kinds of professions.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Strength, Dexterity and Intelligence scores increase by 1.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Panzu mature at 10 years and live up to 70 years.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Panzu stand between 3.5 and 4.5 feet tall, and weigh 80-130 pounds. Your size is Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> YYou have a base walking speed of 25 feet, and a climbing speed of 15 feet.</p>
+			<p class="indent"><strong><em>Panzu Might.</em></strong> You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift, or when grappling a creature.</p>
+			<p class="indent"><strong><em>Ape Weaponry.</em></strong> You can use your teeth or hands to make unarmed strikes. If you hit with them, you deal bludgeoning (fists) or piercing (bite) damage equal to 1d6 + your Strength modifier.</p>
+			<p class="indent"><strong><em>Bodily Harmony.</em></strong> You are proficient in the Athletics or Acrobatics skill.</p>
+			<p class="indent"><strong><em>Tool Adept.</em></strong> You are proficient in one artisan’s tool of your choice.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="height" modifier="1d10">3'5"</set>
+			<set name="weight" modifier="1d4">80 lb.</set>
+		</setters>
+		<rules>
+			<stat name="strength" value="1" />
+			<stat name="dexterity" value="1" />
+			<stat name="intelligence" value="1"/>
+			<stat name="innate speed" value="25" bonus="base" />
+			<stat name="innate speed:climb" value="15" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<select type="Proficiency" name="Bodily Harmony" supports="ID_PROFICIENCY_SKILL_ATHLETICS|ID_PROFICIENCY_SKILL_ACROBATICS"/>
+			<select type="Proficiency" name="Proficiency (Tool Adept)" supports="Artisan tools" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_APELONG_APE_WEAPONRY" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_APELONG_PANZU_MIGHT" />
+		</rules>
+	</element>
+	<element name="Panzu Might" type="Racial Trait" source="Old Gus' Errata: Beastfolk" id="ID_RACIAL_TRAIT_APELONG_PANZU_MIGHT">
+		<description>
+			<p>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift, or when grappling a creature. </p>
+		</description>
+		<sheet>
+			<description>You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift, or when grappling a creature. </description>
+		</sheet>
+	</element>
+
+	<element name="Suxiu" type="Sub Race" source="Old Gus' Errata: Beastfolk" id="ID_SUB_RACE_SUXIU">
+		<supports>Apelong</supports>
+		<description>
+			<p class="indent"> The dexterous suxiu resemble monkeys and macaques. They have exceptional agility, and use it in all aspects of their lives.</p>
+			<p class="indent"><strong><em>Age.</em></strong> Suxiu mature at 5 years and live up to 30 years.</p>
+			<p class="indent"><strong><em>Ability Score Increase.</em></strong> Your Dexterity, Intelligence, Wisdom and Charisma scores increase by 1.</p>
+			<p class="indent"><strong><em>Size.</em></strong> Suxiu are between 3 and 4 feet tall and weigh an average of 35 pounds. Your size is Small.</p>
+			<p class="indent"><strong><em>Speed.</em></strong> You have a base walking speed of 30 feet, and a climbing speed equal to your movement speed.</p>
+			<p class="indent"><strong><em>Prehensile Tail.</em></strong> You can make object interactions using your tail, and if you are not wearing medium or heavy armor, you can suspend your body from it.</p>
+			<p class="indent"><strong><em>Suxiu Agility.</em></strong> Your reflexes and agility allow you to move with a burst of speed. When you move on your turn, you can double your speed. Once you use this trait, you can't use it again until you move 0 feet on your turn.</p>
+			<p class="indent"><strong><em>Graceful Movement.</em></strong>You are proficient in the Acrobatics skill. If you gain this proficiency from your class, you can add double your proficiency bonus to checks made with it. While you are not wearing heavy armor, you can use your Dexterity in place of your Strength score when determining the distance you can cover when making a long or high jump. Additionally, you don't need a running start to perform such jumps.</p>
+		</description>
+		<sheet display="false" />
+		<setters>
+			<set name="height" modifier="1d10">3'1"</set>
+			<set name="weight" modifier="1d4">35 lb.</set>
+		</setters>
+		<rules>
+			<stat name="dexterity" value="1" />
+			<stat name="intelligence" value="1" />
+			<stat name="wisdom" value="1" />
+			<stat name="charisma" value="1" />
+			<stat name="innate speed" value="30" bonus="base" />
+			<stat name="innate speed:climb" value="30" bonus="base" />
+			<grant type="Size" id="ID_SIZE_SMALL" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SUXIU_PREHENSILE_TAIL" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SUXIU_AGILITY" />
+			<grant type="Racial Trait" id="ID_RACIAL_TRAIT_SUXIU_GRACEFUL_MOVEMENT" />
+		</rules>
+	</element>
+	<element name="Suxiu Agility" type="Racial Trait" source="Volo’s Guide to Monsters" id="ID_RACIAL_TRAIT_SUXIU_AGILITY">
+		<description>
+			<p>Your reflexes and agility allow you to move with a burst of speed. When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can’t use it again until you move 0 feet on one of your turns.</p>
+		</description>
+		<sheet>
+			<description>When you move on your turn in combat, you can double your speed until the end of the turn. Once you use this trait, you can’t use it again until you move 0 feet on one of your turns.</description>
+		</sheet>
+	</element>
+
+	<element name="Prehensile Tail" type="Racial Trait" source="Old Gus' Errata: Beastfolk" id="ID_RACIAL_TRAIT_SUXIU_PREHENSILE_TAIL">
+		<description>
+			<p>You can make object interactions using your tail, and if you are not wearing medium or heavy armor, you can suspend your body from it. </p>
+		</description>
+		<sheet>
+			<description>You can make object interactions using your tail, and if you are not wearing medium or heavy armor, you can suspend your body from it. </description>
+		</sheet>
+	</element>
+
+	<element name="Graceful Movement" type="Racial Trait" source="Old Gus' Errata: Beastfolk" id="ID_RACIAL_TRAIT_SUXIU_GRACEFUL_MOVEMENT">
+		<description>
+			<p>You are proficient in the Acrobatics skill. If you gain this proficiency from your class, you can add double your proficiency bonus to checks made with it. While you are not wearing heavy armor, you can use your Dexterity in place of your Strength score when determining the distance you can cover when making a long or high jump. Additionally, you don't need a running start to perform such jumps. </p>
+		</description>
+		<sheet>
+			<description>While you are not wearing heavy armor, you can use your Dexterity in place of your Strength score when determining the distance you can cover when making a long or high jump. Additionally, you don't need a running start to perform such jumps. </description>
+		</sheet>
+		<rules>
+		 <grant type="Grants" id="ID_INTERNAL_GRANTS_PROFICIENCY_SKILL_OR_DOUBLE_ACROBATICS" />	
+		</rules>
+	</element>
+
+
+	<element name="Apelong" type="Language" source="Old Gus' Errata: Beastfolk" id="ID_LANGUAGE_APELONG">
+		<supports>Exotic</supports>
+		<description>
+			<p>Apelong is the language of the Apelong.</p>
+		</description>
+		<setters>
+			<set name="exotic">true</set>
+			<set name="speakers">Apelong</set>
+		</setters>
+	</element>
+</elements>
