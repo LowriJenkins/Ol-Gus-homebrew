@@ -3,12 +3,12 @@
 	<info>
 		<name>Your Content</name>
 		<update version="1.0.0">
-			<file name="beastfolk.index" url="https://raw.githubusercontent.com/SamJenkins1/Ol-Gus-homebrew/master/beastfolk.index" />
+			<file name="beastfolk.index" url="https://raw.githubusercontent.com/LowriJenkins/Ol-Gus-homebrew/master/beastfolk.index" />
 		</update>
 	</info>
 	<files>
-		<file name="race-aaratica.xml" url="https://raw.githubusercontent.com/SamJenkins1/Ol-Gus-homebrew/master/beastfolk/race-aaratica.xml" />
-		<file name="race-apelong.xml" url="https://raw.githubusercontent.com/SamJenkins1/Ol-Gus-homebrew/master/beastfolk/race-apelong.xml" />
-		<file name="race-skiouros.xml" url="https://raw.githubusercontent.com/SamJenkins1/Ol-Gus-homebrew/master/beastfolk/race-skiouros.xml" />
+		<file name="race-aaratica.xml" url="https://raw.githubusercontent.com/LowriJenkins/Ol-Gus-homebrew/master/beastfolk/race-aaratica.xml" />
+		<file name="race-apelong.xml" url="https://raw.githubusercontent.com/LowriJenkins/Ol-Gus-homebrew/master/beastfolk/race-apelong.xml" />
+		<file name="race-skiouros.xml" url="https://raw.githubusercontent.com/LowriJenkins/Ol-Gus-homebrew/master/beastfolk/race-skiouros.xml" />
 	</files>
 </index>
